@@ -29,7 +29,6 @@ button:disabled,
 button:disabled:hover {
   background-color: #a9aeafcc;
   color: #fff;
-  ;
 }
 button:hover {
   background-color: #e4f1f1;
@@ -37,6 +36,9 @@ button:hover {
 }
 section {
   width: 90%;
+  margin: 0 auto;
+}
+section > div{
   border-radius: 1rem;
   margin: 1rem auto;
   padding: 1rem;
@@ -57,16 +59,34 @@ h2 {
 #input-area {
   background-color: #c6e5d9;
 }
+#input-area #add-text{
+  min-width: 200px;
+  width: 60%;
+}
+#todos-wrap{
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  #todos-wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  #todos-wrap div{
+    width: 100%;
+  }
+}
 #incomplete-area {
   border: 2px solid #c6e5d9;
-  min-height: 200px;
+  min-height: 220px;
 }
 #incomplete-area h2 {
   /* border-bottom: 2px solid #c6e5d9; */
 }
 #complete-area {
-  background-color: #dedede;
-  min-height: 200px;
+  background-color: #f0f0f0;
+  min-height: 220px;
+  border: 2px solid #cccccc;
 }
 #complete-area h2 {
   /* border-bottom: 2px solid #bbb; */
@@ -78,15 +98,23 @@ h2 {
 }
 .list-row p {
   margin: 0.5rem auto 0.5rem 0;
+  /* border-bottom: 1px brown dashed;
+  width: 100%; */
+  /* background-color: #fff; */
+  /* background-image:
+  linear-gradient(90deg, rgba(237, 119, 128, 0) 0%, rgba(237, 119, 128, 0) 50%, #fff 0%, #fff 100%), linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 97.5%, #646464 100%);
+  background-size: 8px 100%,100% 2em; */
 }
 
 button.delete {
-  background-color: #bd4747cc;
-  padding: 0.5rem;
+  background-color: #fff;
+  color: #a92e2ecc;
+  font-size: 1.2rem;
+  padding: 0;
+  margin-left: 0.4rem;
 }
 button.delete:hover {
-  background-color: #e6d1d1cc;
-  color: #bd4747cc;
+  opacity: 0.7;
 }
 .warning {
   color: red;
@@ -94,4 +122,15 @@ button.delete:hover {
   margin: 0 auto;
   /* padding: 0 1rem; */
   font-size: 0.9rem;
+}
+footer {
+  background-color: #c6e5d9;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+footer p{
+  margin: 0 auto;
 }

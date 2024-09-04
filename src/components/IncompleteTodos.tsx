@@ -1,7 +1,11 @@
+import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
+
 export const IncompleteTodos = (props) => {
   const { todos, onClickComplete, onClickDelete } = props;
   return (
-    <section id="incomplete-area">
+    <div id="incomplete-area">
       <h2>TODO</h2>
       <ul id="incomplete-list">
         {todos.map((todo, index) => (
@@ -12,12 +16,12 @@ export const IncompleteTodos = (props) => {
                 Finish
               </button>
               <button className="delete" onClick={() => onClickDelete(index)}>
-                x Delete
+                <FontAwesomeIcon icon={faTrashCan} />
               </button>
             </div>
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 };

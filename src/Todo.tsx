@@ -3,6 +3,7 @@ import './styles.css';
 import { InputTodo } from './components/InputTodo';
 import { IncompleteTodos } from './components/IncompleteTodos';
 import { CompleteTodos } from './components/CompleteTodos';
+import { Footer } from './components/Footer';
 
 export const Todo = () => {
   const [todoText, setTodoText] = useState('');
@@ -59,14 +60,17 @@ export const Todo = () => {
         disabled={isMaxLimitIncompleteTodos}
       />
       {isMaxLimitIncompleteTodos && (
-        <p className="warning">You can add up to 5 TODOs! Finish these!</p>
+        <p className="warning">You’ve hit the limit! Wrap a few up before tackling anything new!</p>
       )}
-      <IncompleteTodos
-        todos={incompleteTodos}
-        onClickComplete={onClickComplete}
-        onClickDelete={onClickDelete}
-      />
-      <CompleteTodos todos={completeTodos} onClickRedo={onClickRedo} />
+      <section id="todos-wrap">
+        <IncompleteTodos
+          todos={incompleteTodos}
+          onClickComplete={onClickComplete}
+          onClickDelete={onClickDelete}
+        />
+        <CompleteTodos todos={completeTodos} onClickRedo={onClickRedo} />
+      </section>
+      <Footer />
     </>
   );
 };

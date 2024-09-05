@@ -5,6 +5,10 @@ body {
   border-top: 1rem solid #c6e5d9;
   padding: 0;
   margin: 0;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 1.8rem;
+  box-sizing: border-box;
 }
 
 input {
@@ -66,16 +70,6 @@ h2 {
 #todos-wrap{
   display: block;
 }
-@media screen and (min-width: 768px) {
-  #todos-wrap{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-  }
-  #todos-wrap div{
-    width: 100%;
-  }
-}
 #incomplete-area {
   border: 2px solid #c6e5d9;
   min-height: 220px;
@@ -125,12 +119,34 @@ button.delete:hover {
 }
 footer {
   background-color: #c6e5d9;
-  color: #fff;
+  color: #555;
   text-align: center;
   font-size: 0.8rem;
   margin: 0;
   padding: 0.5rem 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 footer p{
   margin: 0 auto;
+}
+
+
+@media screen and (min-width: 768px) {
+  #todos-wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  #todos-wrap div{
+    width: 100%;
+  }
+  #incomplete-area {
+    min-height: 420px;
+  }
+  #complete-area {
+    min-height: 420px;
+  }
 }

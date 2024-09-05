@@ -52,25 +52,25 @@ export const Todo = () => {
 
   return (
     <>
-      <h1>TODO App</h1>
-      <InputTodo
-        todoText={todoText}
-        onChange={onChangeTodoText}
-        onClick={onClickAdd}
-        disabled={isMaxLimitIncompleteTodos}
-      />
-      {isMaxLimitIncompleteTodos && (
-        <p className="warning">You’ve hit the limit! Wrap a few up before tackling anything new!</p>
-      )}
-      <section id="todos-wrap">
-        <IncompleteTodos
-          todos={incompleteTodos}
-          onClickComplete={onClickComplete}
-          onClickDelete={onClickDelete}
+        <h1>TODO App</h1>
+        <InputTodo
+          todoText={todoText}
+          onChange={onChangeTodoText}
+          onClick={onClickAdd}
+          disabled={isMaxLimitIncompleteTodos}
         />
-        <CompleteTodos todos={completeTodos} onClickRedo={onClickRedo} />
-      </section>
-      <Footer />
+        {isMaxLimitIncompleteTodos && (
+          <p className="warning">You’ve hit the limit! Wrap a few up before tackling anything new!</p>
+        )}
+        <section id="todos-wrap">
+          <IncompleteTodos
+            todos={incompleteTodos}
+            onClickComplete={onClickComplete}
+            onClickDelete={onClickDelete}
+          />
+          <CompleteTodos todos={completeTodos} onClickRedo={onClickRedo} />
+        </section>
+        <Footer />
     </>
   );
 };
